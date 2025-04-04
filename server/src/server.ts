@@ -5,6 +5,7 @@ import routes from './routes/index.js';
 
 await db();
 
+const port = process.env.PORT || 3001
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -19,6 +20,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.listen(PORT, () => {
-  console.log(`API server running on port ${PORT}!`);
+app.listen(port, () => {
+  console.log(`API server running on port ${port}!`);
 });
